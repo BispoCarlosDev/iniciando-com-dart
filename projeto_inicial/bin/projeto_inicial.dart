@@ -5,11 +5,14 @@ void main() {
   bool geek = (idade == altura);
   String nome = 'Carlos';
   String apelido = 'Gentil';
-  String frase = 'Eu sou o $nome, \ntodos me chamam de $apelido. \nEu me '
-  'considero geek, \ntenho $altura de altura, \ntenho $idade anos.';
+
+  List<dynamic> gentil = [23, 1.70, true, 'Carlos Bispo', 'Gentil'];
+
+  String frase = 'Eu sou o ${gentil[3]}, \ntodos me chamam de ${gentil[4]}. \nEu me '
+  'considero geek? ${gentil[2]}, \ntenho ${gentil[1]} de altura, \ntenho ${gentil[0]} anos.';
 
   List<String> listanomes = ['Pedro', 'João', 'Moacir', 'Withor', 'Stephanie'];
 
-  print(listanomes.length);
+  print(frase);
 
 }
