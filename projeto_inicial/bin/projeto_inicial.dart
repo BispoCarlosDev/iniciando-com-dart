@@ -8,5 +8,8 @@ void main() {
   String frase = 'Eu sou o $nome, \ntodos me chamam de $apelido. \nEu me '
   'considero geek, \ntenho $altura de altura, \ntenho $idade anos.';
 
-  print(frase);
+  List<String> listanomes = ['Pedro', 'João', 'Moacir', 'Withor', 'Stephanie'];
+
+  print(listanomes.length);
+
 }
