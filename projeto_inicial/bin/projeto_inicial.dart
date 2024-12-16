@@ -24,7 +24,7 @@ void main() {
   }*/
 
   do{
-    energia =- 12;
+    energia -= 12;
     print('Tarefa Realizada! Fiquei com $energia% de Energia.');
   }while(energia > 0);
 
