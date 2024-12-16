@@ -6,6 +6,7 @@ void main() {
   const String nome = 'Carlos Eduardo de Oliveira Bispo';
   final String apelido = 'Gentil';
   bool maiorDeIdade;
+  int energia = 100;
 
   if(idade >= 18){
     maiorDeIdade = true;
@@ -13,9 +14,19 @@ void main() {
     maiorDeIdade = false;
   }
 
-  for(int i=0; i<10; i++){
+  /*for(int i=0; i<10; i++){
     print('Entreguei $i atividades na Faculdade.');
-  }
+  }*/
+
+  /*while(energia > 0){
+    energia = energia - 12;
+    print('Tarefa Entregue. Fiquei com $energia% de energia.');
+  }*/
+
+  do{
+    energia =- 12;
+    print('Tarefa Realizada! Fiquei com $energia% de Energia.');
+  }while(energia > 0);
 
   List<dynamic> gentil = [idade, altura, geek, nome, apelido, maiorDeIdade];
 
