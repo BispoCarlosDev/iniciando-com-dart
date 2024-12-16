@@ -5,13 +5,24 @@ void main() {
   bool geek = true;
   const String nome = 'Carlos Eduardo de Oliveira Bispo';
   final String apelido = 'Gentil';
+  bool maiorDeIdade;
 
-  List<dynamic> gentil = [idade, altura, geek, nome, apelido];
+  if(idade >= 18){
+    maiorDeIdade = true;
+  }else{
+    maiorDeIdade = false;
+  }
 
-  String frase = 'Eu sou o ${gentil[3]}, \ntodos me chamam de ${gentil[4]}. \nEu me '
-  'considero geek? ${gentil[2]}, \ntenho ${gentil[1]} de altura, \ntenho ${gentil[0]} anos.';
+  List<dynamic> gentil = [idade, altura, geek, nome, apelido, maiorDeIdade];
 
-  List<String> listanomes = ['Pedro', 'João', 'Moacir', 'Withor', 'Stephanie'];
+  String frase = 'Eu sou o ${gentil[3]}.'
+  '\ntodos me chamam de ${gentil[4]}.'
+  '\nEu me considero geek? ${gentil[2]}.'
+  '\ntenho ${gentil[1]} de altura.'
+  '\ntenho ${gentil[0]} anos.'
+  '\nEu Sou Maior de Idade? ${gentil[5]}.';
+
+  //List<String> listanomes = ['Pedro', 'João', 'Moacir', 'Withor', 'Stephanie'];
 
   print(frase);
 
