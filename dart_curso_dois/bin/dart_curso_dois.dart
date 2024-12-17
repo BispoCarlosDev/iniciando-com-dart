@@ -6,7 +6,15 @@ void main() {
   int diasDesdeColheita = 10;
   bool isMadura = funcEstarMadura(diasDesdeColheita);
 
-  mostrarMadura('Goiaba', 10, cor: 'azul');
+  //mostrarMadura('Goiaba', 10, cor: 'azul');
+  int quantosDias = funcQuantosDiasMadura(diasDesdeColheita);
+  print('Faltam $quantosDias dias para a $nome ficar Madura.');
+}
+
+int funcQuantosDiasMadura(int dias){
+  int diasparaMadura = 30;
+  int quantosDiasFaltam = diasparaMadura - dias;
+  return quantosDiasFaltam;
 }
 
 void mostrarMadura(String nome, int dias, {required String cor}){
