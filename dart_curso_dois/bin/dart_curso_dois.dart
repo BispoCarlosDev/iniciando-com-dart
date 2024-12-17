@@ -9,8 +9,8 @@ void main() {
   Fruta fruta01 = Fruta(nome, peso, cor, sabor, diasDesdeColheita);
   Fruta fruta02 = Fruta('Uva', 40, 'Roxo', 'Doce', 15);
 
-  print(fruta01);
-  print(fruta02);
+  fruta01.estarMadura(5);
+  fruta02.estarMadura(8);
 
 }
 
@@ -23,6 +23,13 @@ class Fruta {
   bool? isMadura;
 
   Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita, {this.isMadura});
+
+  void estarMadura(int diasParaMadura){
+    isMadura = diasDesdeColheita >= diasParaMadura;
+    print('A sua $nome foi colhida a $diasDesdeColheita dias e precisa de '
+    '$diasParaMadura para madurar. Ela está Madura? $isMadura.');
+  }
+
 }
 
 int funcQuantosDiasMadura(int dias){
