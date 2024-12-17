@@ -14,20 +14,21 @@ void main() {
 
 }
 
-class Fruta {
-  String nome;
-  double peso;
-  String cor;
+class Fruta extends Alimento{
   String sabor;
   int diasDesdeColheita;
   bool? isMadura;
 
-  Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita, {this.isMadura});
+  Fruta(String nome, double peso, String cor, this.sabor, this.diasDesdeColheita, {this.isMadura}):super(nome, peso, cor);
 
   void estarMadura(int diasParaMadura){
     isMadura = diasDesdeColheita >= diasParaMadura;
     print('A sua $nome foi colhida a $diasDesdeColheita dias e precisa de '
     '$diasParaMadura para madurar. Ela está Madura? $isMadura.');
+  }
+
+  void fazerSuco(){
+    print('Você fez um excelente suco de $nome');
   }
 
 }
@@ -38,15 +39,25 @@ class Alimento{
   String cor;
 
   Alimento(this.nome, this.peso, this.cor);
+
+  void printAlimento(){
+    print('Este(a) $nome pesa $peso gramas e é $cor.');
+  }
 }
 
-class Legume{
-  String nome;
-  double peso;
-  String cor;
+class Legume extends Alimento {
+
   bool isPrecisaCozinhar;
 
-  Legume(this.nome, this.peso, this.cor, this.isPrecisaCozinhar);
+  Legume(String nome, double peso, String cor, this.isPrecisaCozinhar):super(nome, peso, cor);
+
+  void cozinhar(){
+    if(isPrecisaCozinhar){
+      print('Pronto, o $nome está cozinhando.');
+    }else{
+      print('Nem precisa cozinhar');
+    }
+  }
 }
 
 class Citrica{
