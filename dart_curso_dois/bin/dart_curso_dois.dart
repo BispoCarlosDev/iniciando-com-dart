@@ -4,7 +4,7 @@ void main() {
   String cor = "Verde e Amarela";
   String sabor = "Graviola";
   int diasDesdeColheita = 10;
-  bool isMadura = funcEstarMadura(diasDesdeColheita);
+  //bool isMadura = funcEstarMadura(diasDesdeColheita);
 
   Fruta fruta01 = Fruta(nome, peso, cor, sabor, diasDesdeColheita);
   Fruta fruta02 = Fruta('Uva', 40, 'Roxo', 'Doce', 15);
@@ -32,6 +32,47 @@ class Fruta {
 
 }
 
+class Alimento{
+  String nome;
+  double peso;
+  String cor;
+
+  Alimento(this.nome, this.peso, this.cor);
+}
+
+class Legume{
+  String nome;
+  double peso;
+  String cor;
+  bool isPrecisaCozinhar;
+
+  Legume(this.nome, this.peso, this.cor, this.isPrecisaCozinhar);
+}
+
+class Citrica{
+  String nome;
+  double peso;
+  String cor;
+  int diasDesdeColheita;
+  bool? isMadura;
+  double nivelAzedo;
+
+  Citrica(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.nivelAzedo);
+}
+
+class Nozes{
+  String nome;
+  double peso;
+  String cor;
+  int diasDesdeColheita;
+  bool? isMadura;
+  double porcentagemOleoNatural;
+
+  Nozes(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.porcentagemOleoNatural);
+}
+
+
+/*
 int funcQuantosDiasMadura(int dias){
   int diasparaMadura = 30;
   int quantosDiasFaltam = diasparaMadura - dias;
@@ -58,3 +99,4 @@ bool funcEstarMadura(int dias){
     return false;
   }
 }
+*/
