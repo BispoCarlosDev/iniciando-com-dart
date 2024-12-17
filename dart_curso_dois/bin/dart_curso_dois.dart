@@ -3,13 +3,20 @@ void main() {
   double peso = 100.2;
   String cor = "Verde e Amarela";
   String sabor = "Graviola";
-  int diasDesdeColheita = 40;
-  bool isMadura;
+  int diasDesdeColheita = 10;
+  bool isMadura = funcEstarMadura(diasDesdeColheita);
 
-  if (diasDesdeColheita >= 30){
-    isMadura = true;
+  print(isMadura);
+
+  
+
+}
+
+
+bool funcEstarMadura(int dias){
+  if (dias >= 30){
+    return true;
   }else {
-    isMadura = false;
+    return false;
   }
-
 }
