@@ -24,9 +24,26 @@ void main() {
   macadamia.printAlimento();
   limao.printAlimento();
   limao.fazerSuco();*/
+  
+  print('\nPara fazer um bolo de Mandioca:');
+  mandioca.separarIngredientes();
+  mandioca.fazerMassa();
+  mandioca.assar();
 
+  print('\nPara fazer um bolo de Banana:');
   banana.separarIngredientes();
+  banana.fazerMassa();
+  banana.assar();
+
+  print('\nPara fazer um bolo de Macadamia:');
+  macadamia.separarIngredientes();
   macadamia.fazerMassa();
+  macadamia.assar();
+
+  print('\nPara fazer um bolo de Limão:');
+  limao.separarIngredientes();
+  limao.fazerMassa();
+  limao.assar();
 
 }
 
@@ -52,15 +69,15 @@ class Fruta extends Alimento implements Bolo{
 
   @override
   void assar() {
-    print('Colocar no forno');
+    print('Colocar o Bolo de $nome no forno.');
   }
   @override
   void fazerMassa() {
-    print('Mistura a $nome com os ingredientes');
+    print('Mistura o/a $nome com os ingredientes.');
   }
   @override
   void separarIngredientes() {
-    print('Catar a $nome');
+    print('Catar o/a $nome.');
   }
 
 }
@@ -93,15 +110,15 @@ class Legume extends Alimento implements Bolo {
 
   @override
   void assar() {
-    // TODO: implement assar
+    print('Colocar o Bolo de $nome no forno.');
   }
   @override
   void fazerMassa() {
-    // TODO: implement fazerMassa
+    print('Mistura o/a $nome com os ingredientes.');
   }
   @override
   void separarIngredientes() {
-    // TODO: implement separarIngredientes
+    print('Catar o/a $nome.');
   }
 
 }
@@ -120,6 +137,12 @@ class Citrica extends Fruta {
       print('Não Existe Refri de $nome.');
     }
   }
+
+  @override
+  void fazerMassa() {
+    print('Expremer o/a $nome.');
+    super.fazerMassa();
+  }
 }
 
 class Nozes extends Fruta {
@@ -131,7 +154,7 @@ class Nozes extends Fruta {
 
   @override
   void fazerMassa(){
-    print('Tirar a Casca');
+    print('Quebrar a Casca.');
     super.fazerMassa();
   }
 }
