@@ -20,6 +20,26 @@ void main() {
   registrarPrecos.remove('São Paulo');
   print(registrarPrecos);
 
+  Pessoa pessoaCarlos = Pessoa('Carlos', 23, false);
+  Map<String, dynamic> mapCarlos = pessoaCarlos.toMap();
+  print(mapCarlos);
+
+}
+
+class Pessoa{
+  String nome;
+  int idade;
+  bool estaAutenticada;
+
+  Pessoa(this.nome, this.idade, this.estaAutenticada);
+
+  Map<String,dynamic> toMap(){
+    Map<String, dynamic> resultado = {};
+    resultado['nome'] = this.nome;
+    resultado['idade'] = this.idade;
+    resultado['estaAutenticada'] = this.estaAutenticada;
+    return resultado;
+  }
 }
 
 Set<String> registrarDestinos(String destino, Set<String> banco){
