@@ -8,6 +8,8 @@ class Viagem{
   //Para criar um Map
   Map<String,double> registrarPrecos = {};
 
+  int _totalLocaisVisitados = 25000;
+
   Viagem({required this.locomocao});
 
   printCodigo(){
@@ -53,6 +55,10 @@ class Viagem{
 
   void registrarPrecoVisita(String local, dynamic preco){
     registrarPrecos[local] = preco;
+  }
+
+  int get consultarTotalLocaisVisitados{
+    return _totalLocaisVisitados;
   }
 
 }
