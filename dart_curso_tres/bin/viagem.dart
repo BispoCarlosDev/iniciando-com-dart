@@ -51,6 +51,7 @@ class Viagem{
 
   void visitar(String localVisita){
     registrosVisitados.add(localVisita);
+    _totalLocaisVisitados += 1;
   }
 
   void registrarPrecoVisita(String local, dynamic preco){
@@ -59,6 +60,14 @@ class Viagem{
 
   int get consultarTotalLocaisVisitados{
     return _totalLocaisVisitados;
+  }
+
+  void set alterarLocaisVisitados(int novaQnt){
+    if (novaQnt < 10){
+    _totalLocaisVisitados = novaQnt;
+    }else{
+      print('Mentiroso');
+    }
   }
 
 }
