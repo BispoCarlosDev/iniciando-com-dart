@@ -1,13 +1,25 @@
 void main() {
-  escolherMeioTransporte(Transporte.Carro);
+  //escolherMeioTransporte(Transporte.Carro);
 
-  Set<String> registrosVisitados = <String>{};
+  //Set<String> registrosVisitados = <String>{};
 
-  registrosVisitados = registrarDestinos('São Paulo', registrosVisitados);
-  registrosVisitados = registrarDestinos('Recife', registrosVisitados);
-  registrosVisitados = registrarDestinos('Taubaté', registrosVisitados);
-  registrosVisitados = registrarDestinos('São Paulo', registrosVisitados);
-  print(registrosVisitados);
+  //registrosVisitados = registrarDestinos('São Paulo', registrosVisitados);
+  
+  //Para criar um Map
+  Map<String,double> registrarPrecos = {};
+
+  registrarPrecos["São Paulo"] = 1200;
+  registrarPrecos["JiParaná"] = 2000;
+  print(registrarPrecos);
+
+  //Atualizando
+  registrarPrecos["JiParaná"] = 3000;
+  print(registrarPrecos);
+
+  //Deletando
+  registrarPrecos.remove('São Paulo');
+  print(registrarPrecos);
+
 }
 
 Set<String> registrarDestinos(String destino, Set<String> banco){
