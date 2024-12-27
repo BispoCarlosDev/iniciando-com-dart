@@ -8,28 +8,15 @@ void main() {
 
 void function01(){
   print('Started F01!');
-  /*try{
-    function02(1);
-    } on FormatException{
-      print('Deu bug nessa function.');
-    }*/
   try{
     function02(1);
-    } on FormatException catch (e){
-      print('Deu bug nessa function.');
-      print(e.message);
-      print(e.source);
-      print(e.toString());
-    } on HttpException catch (e){
-      print('Uma HttpException foi encontrada.');
-      e.toString();
-    } on IOException catch (e){
-      print('Uma IOException foi encontrada.');
-      e.toString();
-    } on Exception catch (e){
-      print('Foi Detectada uma Excessão.');
-      print(e.toString());
-    }
+  } catch (exception, stackTrace){
+    print(exception);
+    print(stackTrace);
+    rethrow;
+  } finally{
+    print('Chegou no Finally.');
+  }
   print('Finished F01!');
 }
 
