@@ -40,6 +40,9 @@ void main() {
   } on SenderBalanceLowerThanAmountException catch (e){
     print(e);
     print('O usuário de ID ${e.idSender} tentou enviar ${e.amount} mas só tinha ${e.senderBalance} na conta.');
+  } on ReceiverNotAuthenticatedException catch (e){
+    print(e);
+    print('O usuário ${e.idReceiver} não está autenticado!');
   } on Exception {
     print('Algo deu Errado, revise seus dados e tente Novamente.');
   }
