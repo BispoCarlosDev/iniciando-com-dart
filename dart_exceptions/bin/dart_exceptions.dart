@@ -1,29 +1,35 @@
-import 'dart:io';
+//import 'dart:io';
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
 import './exceptions/bank_controller_exceptions.dart';
 import 'dart:math';
 
 void testingNullSafety(){
-  Account? myAccount;
+  Account? myAccount = Account(name: 'Carlos', balance: 600, isAuthenticated: true);
 
   //Simulando uma comunicação externa
   Random rng = Random();
   int randomNumber = rng.nextInt(10);
   if(randomNumber <= 5){
-    myAccount = Account(name: 'Carlos', balance: 600, isAuthenticated: true);
+    myAccount.createdAt = DateTime.now();
   }
   print(myAccount.runtimeType);
 
   //Esta forma dá erro pois não podemos selecionar o balance de um objeto que pode ser nulo
   //print(myAccount.balance);
+  print(myAccount.createdAt);
+  //print(myAccount.createdAt.day);
 
-  //Conversão direta: Má prática
+  //Conversão direta: Má prática, pode gerar erro em tempo de execução
   //print(myAccount!.balance);
+  //print(myAccount.createdAt!.day);
 
   //Com if/else eu posso verificar se a conta é nula e tratar desta forma
   if(myAccount != null){
     print(myAccount.balance);
+    if(myAccount.createdAt != null){
+      print(myAccount.createdAt!.day);
+    }
   }else{
     print('Conta não localizada!');
   }
