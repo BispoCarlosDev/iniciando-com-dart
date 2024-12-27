@@ -2,8 +2,42 @@ import 'dart:io';
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
 import './exceptions/bank_controller_exceptions.dart';
+import 'dart:math';
+
+void testingNullSafety(){
+  Account? myAccount;
+
+  //Simulando uma comunicação externa
+  Random rng = Random();
+  int randomNumber = rng.nextInt(10);
+  if(randomNumber <= 5){
+    myAccount = Account(name: 'Carlos', balance: 600, isAuthenticated: true);
+  }
+  print(myAccount.runtimeType);
+
+  //Esta forma dá erro pois não podemos selecionar o balance de um objeto que pode ser nulo
+  //print(myAccount.balance);
+
+  //Conversão direta: Má prática
+  //print(myAccount!.balance);
+
+  //Com if/else eu posso verificar se a conta é nula e tratar desta forma
+  if(myAccount != null){
+    print(myAccount.balance);
+  }else{
+    print('Conta não localizada!');
+  }
+
+  //Utilizando operador ternário
+  print(myAccount != null ? myAccount.balance : 'Conta não localizada!');
+
+  //Usando SafeCol
+  print(myAccount?.balance);
+
+}
 
 void main() {
+  testingNullSafety();
   // Criando o banco
   BankController bankController = BankController();
 
@@ -21,11 +55,11 @@ void main() {
   // Fazendo transferência
   try{
     bool result = bankController.makeTransfer(
-      idSender: "Kako", idReceiver: "Ricarth", amount: 700);
+      idSender: "Kako", idReceiver: "Ricarth", amount: 500);
       
   // Observando resultado
   if (result){
-    print('Pix Chegou Negada!');
+    //print('Pix Chegou Negada!');
   }
 
   } on SenderIdInvalidException catch (e){
