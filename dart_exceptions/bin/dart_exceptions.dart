@@ -1,6 +1,7 @@
+import 'dart:io';
 import 'controllers/bank_controller.dart';
 import 'models/account.dart';
-/*
+
 void main() {
   // Criando o banco
   BankController bankController = BankController();
@@ -18,21 +19,8 @@ void main() {
 
   // Fazendo transferência
   bool result = bankController.makeTransfer(
-      idSender: "Kako", idReceiver: "Ricarth", amount: 700);
+      idSender: "Kako", idReceiver: "Ricarth", amount: 50);
 
   // Observando resultado
   print(result);
-}*/
-
-void main(){
-  try{
-    testFunc();
-  } catch (e){
-    print(e.runtimeType);
-  }
-}
-
-void testFunc(){
-  throw 'Carlos';
-  //throw Account(name: 'Carlos', balance: 500, isAuthenticated: true);
 }
