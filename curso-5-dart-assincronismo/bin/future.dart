@@ -1,10 +1,11 @@
-
+import 'dart:io';
 void main(){
 
   Future myFuture = Future((){
     print('Estamos indo de volta para o Futuro');
-    return 21;
-  }).then((onValue) => print('O Valor é $onValue'));
+    print('Digite o Ano para onde você quer ir!');
+    return stdin.readLineSync().toString();
+  }).then((onValue) => print('Estamos indo para $onValue'));
 
   print('Encerrando Main.');
 }
