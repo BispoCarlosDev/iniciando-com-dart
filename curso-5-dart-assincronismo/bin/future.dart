@@ -7,5 +7,13 @@ void main(){
     return stdin.readLineSync().toString();
   }).then((onValue) => print('Estamos indo para $onValue'));
 
+  Future<int> myFutureFunc()async{
+    print('Eu tenho uma função no Futuro.');
+    await Future.delayed(Duration(seconds: 15));
+    return 12;
+  }
+
+  myFutureFunc().then((value) => print('O valor da minha função é: $value'));
+
   print('Encerrando Main.');
 }
