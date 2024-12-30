@@ -10,7 +10,11 @@ void main() async {
   var a = true;
   String usuario = '';
 
-  var myStream = BotClock().carlosBotStream(1,10);
+
+  print('-- Iniciando o CarlosBOT, aguarde..--');
+  await BotClock().clock(2);
+
+  var myStream = BotClock().carlosBotStream(1,30);
   var subscriber = myStream.listen((event) {
     print('    CarlosBot está ativo a $event segundos');
   }, onDone: (){
@@ -18,9 +22,12 @@ void main() async {
     a = false;
   });
 
-  print('-- Iniciando o CarlosBOT, aguarde..--');
-  await BotClock().clock(2);
-  print('CarlosBOT:\n Oi :) \n Como posso ajudar?');
+  print('Olá, qual o seu nome?');
+  //String nomeusuario = descNomeFunc();
+  Future pessoa = descobrirNomeFunc().then((value) => print('\nCarlosBOT: Olá $value :)'));
+  await Future.delayed(Duration(seconds: 5));
+  print('\nComo posso ajudar?');
+  //print('CarlosBOT:\n Olá $nomeusuario :) \n Como posso ajudar?');
   do {
     usuario = stdin.readLineSync().toString();
     print('-- Processando pergunta, aguarde..--');
@@ -48,4 +55,16 @@ void main() async {
   } while (a);
 
   print('--Encerrando CarlosBOT--');
+
+}
+
+String descNomeFunc(){
+  String nome = stdin.readLineSync().toString();
+  return nome;
+}
+
+Future<String> descobrirNomeFunc()async{
+  String nome = stdin.readLineSync().toString();
+  await Future.delayed(Duration(seconds: 5));
+  return nome;
 }
